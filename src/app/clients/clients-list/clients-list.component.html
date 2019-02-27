@@ -1,0 +1,17 @@
+<div class="row" *ngFor='let client of clients, let i = index'>
+  <div class="col-md-2">{{client.documento}}</div>
+  <div class="col-md-1">{{client.apellido}}</div>
+  <div class="col-md-1">{{client.nombre}}</div>
+  <div class="col-md-2">{{client.telefono}}</div>
+  <div class="col-md-2">{{client.direccion}}</div>
+  <div class="col-md-1">{{client.estado | estado}}</div>
+  <div class="col-md-1">
+    <button class="btn btn-small btn-info" (click)='onEditClient(client, index)'>Editar</button>
+  </div>
+  <div class="col-md-1">
+    <button class="btn btn-small btn-danger" (click)='onDeleteClient(index)'>Borrar</button>
+  </div>
+</div>
+
+<button class="btn btn-primary"
+        (click)="onAddClient()">Add Client</button>
